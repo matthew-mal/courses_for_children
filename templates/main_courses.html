@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="features">
+        <h1>Курcы</h1>
+            <div class="post-wrap">
+                {% for el in courses %}
+                <div class="post-item">
+                    <div class="item-content">
+                        <div class="item-icon group"></div>
+                        <div class="item-body">
+                            <h3>{{ el.title }}</h3>
+                            <p>{{ el.intro }}</p>
+                            <p>{{ el.hours }} уроков</p>
+                        </div>
+                        <div class="item-footer">
+                            <a href="#" class="link"><span>Подробнее</span></a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+    </div>
+{% endblock %}
+
+
+{% for el in courses %}
+    <div class="portfolio-wrap">
+        <div class="portfolio-item">
+            <div class="portfolio-item-wrap">
+                <a href="">
+                    <img src="https://html5book.ru/wp-content/uploads/2018/12/natjurmort.jpg">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-heading">
+                            <h3>{{ el.title }}</h3>
+                        </div>
+
+                        <ul>
+                            <li>{{ el.intro }}</li>
+                            <li>{{ el.hours }} уроков</li>
+                        </ul>
+
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endfor %}

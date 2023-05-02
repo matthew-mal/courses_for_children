@@ -1,0 +1,45 @@
+body {
+    background-color: #2c2c2c;
+}
+
+main .features {
+    float: left;
+    color: white;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 100%;
+}
+main .btn.btn-warning {
+    margin: 20px auto;
+}
+main .features h1 {
+    font-size: 60px;
+    margin: 20px auto;
+}
+
+
+main .features p {
+
+    margin: 20px auto;
+}
+
+.alert-warning {
+    margin-left: auto;
+    margin-right: auto;
+    clear: both;
+    width: 400px;
+}
+
+.alert-warning p {
+    float: left;
+    text-align: center;
+    margin: 20px 50%;
+}
+
+form {
+    margin-left: 15%;
+    width: 800px;
+    margin-top: 30px;
+}

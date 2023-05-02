@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block tittle %}Новости на сайте{% endblock %}
+
+
+{% block content %}
+    <div class="features">
+        <h1>Статьи</h1>
+        <div class="post-wrap">
+        {% for el in news %}
+            <div class="post-item">
+        <div class="post-item-wrap">
+            <a href="" class="post-link">
+                <h3 class="post-title">{{ el.title }}</h3>
+                <p class="post-content">{{ el.intro }}</p>
+                <p>{{ el.date }}</p>
+                 <a href="{% url 'news_detail' el.id %}" class="btn btn-warning">Подробнее</a>
+            </a>
+        </div>
+    </div>
+        {% endfor %}
+        </div>
+    </div>
+{% endblock %}

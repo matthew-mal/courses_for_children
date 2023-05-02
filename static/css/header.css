@@ -1,0 +1,78 @@
+
+
+ul.complex_list {
+  display: flex;
+}
+
+.complex_list li {
+  font: 0.75em arial;
+  list-style: none;
+}
+
+.complex_list li a {
+  text-decoration: none;
+  margin: 2px;
+  color: #fff;
+}
+
+
+
+header {
+    width: 100%;
+    background: white;
+    box-shadow: 3px 3px 1px rgba(0, 0, 0, .05);
+    padding: 15px 0;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+/* логотип */
+.logo {
+    display: block;
+    float: left;
+}
+
+.logo span {
+    color: white;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    margin: 5px 0;
+    text-align: center;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, .4);
+}
+
+.logo span:nth-child(odd) {
+    background: #EF5A42;
+}
+
+
+
+/* меню */
+#menu {
+    float: right;
+}
+
+#menu li {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+#menu a {
+    font-size: 30px;
+    color: #111;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    display: block;
+    line-height: 40px;
+    margin-left: 10px;
+}
+
+#menu a:hover {
+    color: #EF5A42;
+}
+
+
