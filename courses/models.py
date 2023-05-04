@@ -22,5 +22,12 @@ class Task(models.Model):
     hours = models.IntegerField('Всего заданий')
     attached_file = models.FileField(upload_to='tasks/')
 
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Задание'
+        verbose_name_plural = 'Задания'
+
     def get_absolute_url(self):
         return reverse('task_detail', args=[str(self.id)])

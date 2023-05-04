@@ -1,4 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.urls import reverse_lazy
+from django.views.generic import DeleteView
 from django.views.generic.detail import DetailView
 from django.contrib.auth.decorators import login_required, user_passes_test
 from .forms import TaskForm
@@ -29,6 +31,12 @@ class TaskDetailView(DetailView):
     def get_object(self, queryset=None):
         pk = self.kwargs.get('pk')
         return self.model.objects.get(pk=pk)
+
+
+class TaskDeleteView(DeleteView):
+    model = Task
+    template_name = 'task_confirm_delete.html'
+    success_url = reverse_lazy('courses')
 
 
 @login_required

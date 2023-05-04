@@ -13,8 +13,8 @@
     {% else %}
         <p>Нет заданий для этого курса.</p>
     {% endif %}
-
+    {% if user.is_staff %}
     <a href="{% url 'add_task' course.id %}">Добавить задание</a>
-
+    {% endif %}
 {% endblock %}
 

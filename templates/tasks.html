@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Задания к курсу "{{ course.title }}"</h1>
+    <h1>Задание "{{ task.name }}"</h1>
     {% if tasks %}
         <ul>
             {% for task in tasks %}
                 <li>
-                    <h3>{{ task.name }}</h3>
+
                     <p>{{ task.description }}</p>
                     {% if task.file %}
                         {% if task.file.url|slice:'-4' == '.mp4' %}
