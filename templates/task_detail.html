@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ task.name }}</h1>
+    <p>{{ task.description }}</p>
+    {% if task.attached_file %}
+        {% if task.file.url|slice:'-4' == '.mp4' %}
+            <video src="{{ task.file.url }}" controls></video>
+        {% else %}
+            <img src="{{ task.file.url }}" alt="{{ task.name }}">
+        {% endif %}
+    {% endif %}
+    <a href="{% url 'task_update' pk=task.pk %}">Редактировать задание</a>
+{% endblock %}

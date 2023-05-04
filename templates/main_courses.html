@@ -14,7 +14,7 @@
                             <p>{{ el.hours }} уроков</p>
                         </div>
                         <div class="item-footer">
-                            <a href="#" class="link"><span>Подробнее</span></a>
+                            <a href="{% url 'course_detail' el.id %}" class="link"><span>Подробнее</span></a>
                         </div>
                     </div>
                 </div>
@@ -24,25 +24,3 @@
 {% endblock %}
 
 
-{% for el in courses %}
-    <div class="portfolio-wrap">
-        <div class="portfolio-item">
-            <div class="portfolio-item-wrap">
-                <a href="">
-                    <img src="https://html5book.ru/wp-content/uploads/2018/12/natjurmort.jpg">
-                    <div class="portfolio-item-inner">
-                        <div class="portfolio-heading">
-                            <h3>{{ el.title }}</h3>
-                        </div>
-
-                        <ul>
-                            <li>{{ el.intro }}</li>
-                            <li>{{ el.hours }} уроков</li>
-                        </ul>
-
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-{% endfor %}

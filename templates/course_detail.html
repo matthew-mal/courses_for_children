@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ course.title }}</h1>
+    <p>{{ course.description }}</p>
+    <h2>Задания:</h2>
+    {% if tasks %}
+        <ul>
+            {% for task in tasks %}
+                <li><a href="{{ task.get_absolute_url }}">{{ task.name }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Нет заданий для этого курса.</p>
+    {% endif %}
+
+    <a href="{% url 'add_task' course.id %}">Добавить задание</a>
+
+{% endblock %}
+
