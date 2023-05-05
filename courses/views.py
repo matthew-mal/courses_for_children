@@ -3,7 +3,7 @@ from django.urls import reverse_lazy
 from django.views.generic import DeleteView
 from django.views.generic.detail import DetailView
 from django.contrib.auth.decorators import login_required, user_passes_test
-from .forms import TaskForm
+from .forms import TaskForm, CourseForm
 from .models import Course, Task
 
 
@@ -66,3 +66,25 @@ def task_update(request, pk):
         form.save()
         return redirect('task_detail', pk=pk)
     return render(request, 'task_update.html', {'form': form})
+
+
+@user_passes_test(lambda u: u.is_superuser)
+def add_course(request):
+    error = ''
+    if request.method == 'POST':
+        form = CourseForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('courses')
+
+        else:
+            error = 'Форма заполнена неверно'
+
+    form = CourseForm()
+
+    context = {
+        'form': form,
+        'error': error
+    }
+
+    return render(request, 'add_course.html', context)

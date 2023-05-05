@@ -4,11 +4,6 @@
 
 
 {% block content %}
-<a href="{% url 'add_article' %}">
-        <li>
-            <button class="btn btn-info"><i class="fa-solid fa-plus"></i>Добавить статью</button>
-        </li>
-    </a>
     <div class="features">
         <h1>Статьи</h1>
         <div class="post-wrap">
@@ -25,5 +20,10 @@
                 </div>
             {% endfor %}
         </div>
+        <li>
+            <a href="{% url 'add_article' %}">
+                <button class="btn btn-info"><i class="fa-solid fa-plus"></i>Добавить статью</button>
+            </a>
+        </li>
     </div>
 {% endblock %}

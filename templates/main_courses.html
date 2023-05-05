@@ -3,8 +3,8 @@
 {% block content %}
     <div class="features">
         <h1>Курcы</h1>
-            <div class="post-wrap">
-                {% for el in courses %}
+        <div class="post-wrap">
+            {% for el in courses %}
                 <div class="post-item">
                     <div class="item-content">
                         <div class="item-icon group"></div>
@@ -18,8 +18,15 @@
                         </div>
                     </div>
                 </div>
-                {% endfor %}
-            </div>
+            {% endfor %}
+        </div>
+
+        <li>
+            <a href="{% url 'add_course' %}">
+                <button class="btn btn-info"><i class="fa-solid fa-plus"></i>Добавить курс</button>
+            </a>
+        </li>
+
     </div>
 {% endblock %}
 

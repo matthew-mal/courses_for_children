@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import user_passes_test
 from django.shortcuts import render, redirect
 from .models import Articles
 from .forms import ArticlesForm
@@ -15,6 +16,7 @@ class NewsAddress(DetailView):
     context_object_name = 'article'
 
 
+@user_passes_test(lambda u: u.is_superuser)
 def add_article(request):
     error = ''
     if request.method == 'POST':
