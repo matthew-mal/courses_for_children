@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <form action=".." method="post" class="ui-form">
+        <h3>Войти на сайт</h3>
+        <div class="form-row">
+            {% csrf_token %}
+        </div>
+        <div class="form-row">
+            {{ form.as_p }}
+        </div>
+
+        <p><input type="submit" value="Войти"></p>
+    </form>
+{% endblock %}

@@ -45,11 +45,16 @@
             </a>
             <a href="{% url 'signup' %}">
                 <li><i class="fa-solid fa-address-book"></i> Создать аккаунт</li>
+
+                {% if user.is_authenticated %}
+                    <a href="{% url 'user' %}">
+                        <li><i class="fa-solid fa-address-book"></i>Аккаунт</li>
+                    </a>
+                {% endif %}
             </a>
         </ul>
     </nav>
 </header>
-
 
 
 <main>
