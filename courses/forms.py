@@ -32,13 +32,13 @@ class TaskForm(ModelForm):
         widgets = {
             "name": TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Название курса'
+                'placeholder': 'Заголовок задания'
             }),
             "description": TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Краткое описание'
+                'placeholder': 'Описание'
             }),
-            "hours": Textarea(attrs={
+            "hours": TextInput(attrs={
                 'class': 'form-control',
                 'placeholder': 'Количество уроков'
             }),

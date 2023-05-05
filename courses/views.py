@@ -39,11 +39,10 @@ class TaskDeleteView(DeleteView):
     success_url = reverse_lazy('courses')
 
 
-@login_required
 @user_passes_test(lambda u: u.is_superuser)
 def add_task(request, course_id):
     course = Course.objects.get(id=course_id)
-
+    error = ''
     if request.method == 'POST':
         form = TaskForm(request.POST, request.FILES)
         if form.is_valid():
@@ -51,10 +50,15 @@ def add_task(request, course_id):
             task.course = course
             task.save()
             return redirect('course_detail', course_id=course_id)
-    else:
-        form = TaskForm()
+        else:
+            error = 'Форма заполнена неверно'
 
-    context = {'form': form, 'course': course}
+    form = TaskForm()
+    context = {
+        'form': form,
+        'course': course,
+        'error': error
+    }
     return render(request, 'add_task.html', context)
 
 

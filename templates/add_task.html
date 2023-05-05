@@ -1,12 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Добавить задание к курсу "{{ course.title }}"</h1>
 
-  <form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-
-    <button type="submit">Сохранить</button>
-  </form>
+    <div class="features">
+        <h1>Добавить задание к курсу "{{ course.title }}"</h1>
+        <form class="decor" method="post">
+            <div class="form-left-decoration"></div>
+            <div class="form-right-decoration"></div>
+            <div class="circle"></div>
+            <div class="form-inner">
+                {% csrf_token %}
+                {{ form.name }}
+                <br>
+                {{ form.description }}
+                <br>
+                {{ form.hours }}
+                <br>
+                {{ form.attached_file }}
+                <button class="btn btn-success" type="submit">Добавить курс</button>
+            </div>
+            <span>{{ error }}</span>
+        </form>
+    </div>
 {% endblock %}
