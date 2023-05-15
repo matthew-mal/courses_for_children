@@ -27,4 +27,4 @@ class CourseForm(ModelForm):
 class TaskForm(ModelForm):
     class Meta:
         model = Task
-        fields = ['name', 'description', 'hours', 'attached_file', 'course']
+        fields = ('name', 'description', 'hours', 'attached_file', 'course')
