@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views.generic import DeleteView
 from django.views.generic.detail import DetailView
-from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib.auth.decorators import user_passes_test
 from .forms import TaskForm, CourseForm
 from .models import Course, Task
 

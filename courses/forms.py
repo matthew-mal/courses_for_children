@@ -1,6 +1,6 @@
 from django import forms
 from .models import Task, Course
-from django.forms import ModelForm, TextInput, Textarea, FileInput
+from django.forms import ModelForm, TextInput, Textarea, FileInput, NumberInput
 
 
 class CourseForm(ModelForm):
@@ -27,23 +27,4 @@ class CourseForm(ModelForm):
 class TaskForm(ModelForm):
     class Meta:
         model = Task
-        fields = ['name', 'description', 'hours', 'attached_file']
-
-        widgets = {
-            "name": TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'Заголовок задания'
-            }),
-            "description": TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'Описание'
-            }),
-            "hours": TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'Количество уроков'
-            }),
-            "attached_file": FileInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'Прикрепить файл'
-            })
-        }
+        fields = ['name', 'description', 'hours', 'attached_file', 'course']

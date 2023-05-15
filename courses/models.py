@@ -20,7 +20,7 @@ class Task(models.Model):
     name = models.CharField('Название', max_length=20)
     description = models.CharField('Описание', max_length=150)
     hours = models.IntegerField('Всего заданий')
-    attached_file = models.FileField(upload_to='tasks/')
+    attached_file = models.FileField(upload_to='static/tasks/')
 
     def __str__(self):
         return self.name

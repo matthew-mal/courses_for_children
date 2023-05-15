@@ -28,7 +28,6 @@ def add_article(request):
             error = 'Форма заполнена неверно'
 
     form = ArticlesForm()
-
     data = {
         'form': form,
         'error': error
