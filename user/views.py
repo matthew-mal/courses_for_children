@@ -20,13 +20,10 @@ def signup(request):
 
             user = authenticate(username=username, password=password)
             login(request, user)
-        return redirect('news_home')
+        return redirect('home')
     else:
         form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
-
-
-
 
 
 @login_required

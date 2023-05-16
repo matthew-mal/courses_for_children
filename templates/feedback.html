@@ -4,16 +4,21 @@
     <div class="features">
         <h1>Отзывы</h1>
         {% if  reviews %}
-        {% for el in reviews %}
-            <div class="alert alert-warning">
-            <h3>{{ el.login }}</h3>
-            <h5>{{ el.feedback }}</h5>
-            <h6>{{ el.points }}</h6>
-            <p>{{ el.date }}</p>
-            </div>
-        {% endfor %}
+            {% for el in reviews %}
+                <div class="alert alert-warning">
+                    <h3>{{ el.login }}</h3>
+                    <h5>{{ el.feedback }}</h5>
+                    <h6>{{ el.points }}</h6>
+                    <p>{{ el.date }}</p>
+                </div>
+            {% endfor %}
         {% else %}
             <p>Пока нет отзывов</p>
         {% endif %}
+        <li>
+            <a href="{% url 'add_feedback' %}">
+                <button class="btn btn-info"><i class="fa-solid fa-plus"></i>Оставить отзыв</button>
+            </a>
+        </li>
     </div>
 {% endblock %}
