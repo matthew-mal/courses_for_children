@@ -1,4 +1,3 @@
-from django import forms
 from .models import Task, Course
 from django.forms import ModelForm, TextInput, Textarea, FileInput, NumberInput
 
